@@ -1,207 +1,149 @@
-(function ()
-{
-	// Saving comments to localstorage
-	function initStorage ()
-	{
-		var frm = document.forms['post_comment'];
-		frm = frm && frm.elements;
+(function () {
+    // Saving comments to localstorage
+    function initStorage() {
+        var frm = document.forms['post_comment'];
 
-		function save ()
-		{
-			var text = frm['text'].value,
-				id = 'comment_text_' + frm['id'].value;
+        frm = frm && frm.elements;
 
-			if (text)
-				localStorage.setItem(id, text);
-			else
-				localStorage.removeItem(id);
-			localStorage.setItem('comment_name', frm['name'].value);
-			localStorage.setItem('comment_email', frm['email'].value);
-			localStorage.setItem('comment_showemail', frm['show_email'].checked + 0);
-		}
+        function save() {
+            var text = frm['text'].value,
+                id   = 'comment_text_' + frm['id'].value;
 
-		try
-		{
-			if (!('localStorage' in window) || window['localStorage'] === null)
-				return;
+            if (text) {
+                localStorage.setItem(id, text);
+            } else {
+                localStorage.removeItem(id);
+            }
+            localStorage.setItem('comment_name', frm['name'].value);
+            localStorage.setItem('comment_email', frm['email'].value);
+            localStorage.setItem('comment_showemail', frm['show_email'].checked + 0);
+        }
 
-			if (document.cookie.indexOf('comment_form_sent=') != -1)
-			{
-				var id = document.cookie.replace(/(?:(?:^|.*;\s*)comment_form_sent\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-				document.cookie = 'comment_form_sent=0; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
-				localStorage.removeItem('comment_text_' + id);
-			}
-			else
-				frm['text'].value = frm['text'].value || localStorage.getItem('comment_text_' + frm['id'].value) || '';
+        try {
+            if (!('localStorage' in window) || window['localStorage'] === null)
+                return;
 
-			if (!frm)
-				return;
+            if (document.cookie.indexOf('comment_form_sent=') != -1) {
+                var id = document.cookie.replace(/(?:(?:^|.*;\s*)comment_form_sent\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
-			if (bIE)
-			{
-				frm['name'].attachEvent('onchange', save);
-				frm['email'].attachEvent('onchange', save);
-				frm['show_email'].attachEvent('onchange', save);
-				frm['text'].attachEvent('onchange', save);
-				document.forms['post_comment'].attachEvent('onsubmit', save);
-			}
-			if (bW3)
-			{
-				frm['name'].addEventListener('change', save, false);
-				frm['email'].addEventListener('change', save, false);
-				frm['show_email'].addEventListener('change', save, false);
-				frm['text'].addEventListener('change', save, false);
-				document.forms['post_comment'].addEventListener('submit', save, false);
-			}
+                document.cookie = 'comment_form_sent=0; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
+                localStorage.removeItem('comment_text_' + id);
+            } else {
+                frm['text'].value = frm['text'].value || localStorage.getItem('comment_text_' + frm['id'].value) || '';
+            }
 
-			frm['name'].value = frm['name'].value || localStorage.getItem('comment_name');
-			frm['email'].value = frm['email'].value || localStorage.getItem('comment_email');
-			frm['show_email'].checked = frm['show_email'].checked || !!(localStorage.getItem('comment_showemail') - 0);
+            if (!frm) {
+                return;
+            }
 
-			save();
-			setInterval(save, 5000);
-		}
-		catch (e) {}
-	}
+            frm['name'].addEventListener('change', save, false);
+            frm['email'].addEventListener('change', save, false);
+            frm['show_email'].addEventListener('change', save, false);
+            frm['text'].addEventListener('change', save, false);
+            document.forms['post_comment'].addEventListener('submit', save, false);
 
-	// Ctrl + arrows navigation
-	var inpFocused = false, upLink, nextLink, prevLink;
+            frm['name'].value         = frm['name'].value || localStorage.getItem('comment_name');
+            frm['email'].value        = frm['email'].value || localStorage.getItem('comment_email');
+            frm['show_email'].checked = frm['show_email'].checked || !!(localStorage.getItem('comment_showemail') - 0);
 
-	function focus ()
-	{
-		inpFocused = true;
-	}
+            save();
+            setInterval(save, 5000);
+        }
+        catch (e) {}
+    }
 
-	function blur ()
-	{
-		inpFocused = false;
-	}
+    // Ctrl + arrows navigation
+    var inpFocused = false, upLink, nextLink, prevLink;
 
-	function navigateThrough (e)
-	{
-		e = e || window.event;
+    function focus() {
+        inpFocused = true;
+    }
 
-		if (!(e.ctrlKey || e.altKey) || inpFocused)
-			return;
+    function blur() {
+        inpFocused = false;
+    }
 
-		var link = false;
-		switch (e.keyCode ? e.keyCode : e.which ? e.which : null)
-		{
-			case 0x27:
-				link = nextLink;
-				break;
-			case 0x25:
-				link = prevLink;
-				break;
-			case 0x26:
-				link = upLink;
-				break;
-		}
+    function navigateThrough(e) {
+        e = e || window.event;
 
-		if (link)
-		{
-			document.location = link;
+        if (!(e.ctrlKey || e.altKey) || inpFocused)
+            return;
+
+        var link = false;
+        switch (e.keyCode ? e.keyCode : e.which ? e.which : null) {
+            case 0x27:
+                link = nextLink;
+                break;
+            case 0x25:
+                link = prevLink;
+                break;
+            case 0x26:
+                link = upLink;
+                break;
+        }
+
+        if (link) {
+            document.location = link;
 //			if (window.event)
 //				window.event.returnValue = false;
 //			if (e.preventDefault)
 //				e.preventDefault();
-		}
-	}
+        }
+    }
 
-	function initNavigate ()
-	{
-		if (!document.getElementsByTagName)
-			return;
+    function initNavigate() {
+        var e, i, ae = document.getElementsByTagName('LINK');
+        for (i = ae.length; i--;) {
+            e = ae[i];
+            if (e.rel == 'next') {
+                nextLink = e.href;
+            }
+            else if (e.rel == 'prev') {
+                prevLink = e.href;
+            }
+            else if (e.rel == 'up') {
+                upLink = e.href;
+            }
+        }
 
-		var e, i, ae = document.getElementsByTagName('LINK');
-		for (i = ae.length; i-- ;)
-		{
-			e = ae[i];
-			if (e.rel == 'next')
-				nextLink = e.href;
-			if (e.rel == 'prev')
-				prevLink = e.href;
-			if (e.rel == 'up')
-				upLink = e.href;
-		}
+        document.addEventListener('keydown', navigateThrough, true);
 
-		if (bIE)
-		{
-			document.attachEvent('onkeydown', navigateThrough);
+        ae = document.getElementsByTagName('INPUT');
+        for (i = ae.length; i--;) {
+            e = ae[i];
+            if (e.type == 'text' || e.type == 'password' || e.type == 'search') {
+                e.addEventListener('focus', focus, true);
+                e.addEventListener('blur', blur, true);
+            }
+        }
 
-			ae = document.getElementsByTagName('INPUT');
-			for (i = ae.length; i-- ;)
-			{
-				e = ae[i];
-				if (e.type == 'text' || e.type == 'password' || e.type == 'search')
-				{
-					e.attachEvent('onfocus', focus);
-					e.attachEvent('onblur', blur);
-				}
-			}
+        ae = document.getElementsByTagName('TEXTAREA');
+        for (i = ae.length; i--;) {
+            e = ae[i];
+            e.addEventListener('focus', focus, true);
+            e.addEventListener('blur', blur, true);
+        }
+    }
 
-			ae = document.getElementsByTagName('TEXTAREA');
-			for (i = ae.length; i-- ;)
-			{
-				e = ae[i];
-				e.attachEvent('onfocus', focus);
-				e.attachEvent('onblur', blur);
-			}
-		}
-		if (bW3)
-		{
-			document.addEventListener('keydown', navigateThrough, true);
+    function Init() {
+        if (started) {
+            return;
+        }
 
-			ae = document.getElementsByTagName('INPUT');
-			for (i = ae.length; i-- ;)
-			{
-				e = ae[i];
-				if (e.type == 'text' || e.type == 'password' || e.type == 'search')
-				{
-					e.addEventListener('focus', focus, true);
-					e.addEventListener('blur', blur, true);
-				}
-			}
+        started = true;
 
-			ae = document.getElementsByTagName('TEXTAREA');
-			for (i = ae.length; i-- ;)
-			{
-				e = ae[i];
-				e.addEventListener('focus', focus, true);
-				e.addEventListener('blur', blur, true);
-			}
-		}
-	}
+        initNavigate();
+        initStorage();
+    }
 
+    var started = false;
 
-	function Init()
-	{
-		if (started)
-			return;
-		started = true;
-
-		initNavigate();
-		initStorage();
-	}
-
-	function InitLoad()
-	{
-		Init();
-		new Image().src = "//counter.yadro.ru/hit?r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";h"+escape(document.title.substring(0,80))+";"+Math.random();
-	}
-
-	var bW3 = document.addEventListener != null,
-		bIE = !bW3 && document.attachEvent != null,
-		started = false;
-
-	if (bIE)
-		attachEvent('onload', InitLoad);
-	if (bW3)
-	{
-		document.addEventListener('DOMContentLoaded', Init, false);
-		addEventListener('load', InitLoad, true);
-	}
-
+    document.addEventListener('DOMContentLoaded', Init, false);
+    addEventListener('load', function () {
+            Init();
+            new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";h" + escape(document.title.substring(0, 80)) + ";" + Math.random();
+        }
+        , true);
 })();
 
 /*!
