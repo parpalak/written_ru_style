@@ -11,12 +11,10 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 <title>Сайт Романа Парпалака</title>
 <!-- s2_meta -->
 <meta property="og:image" content="//written.ru/_styles/written_ru/images/me_4.jpg">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php echo common_head(); ?>
 <link rel="stylesheet" href="/_styles/written_ru/styles.css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400&subset=latin,cyrillic,cyrillic-ext">
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/_styles/written_ru/favicon.png">
-<link rel="preconnect" href="//fonts.gstatic.com">
-<link rel="preload" href="//tex.s2cms.ru/latex.js" as="script">
 <!-- s2_navigation_link -->
 <!-- s2_rss_link -->
 <link rel="alternate" type="application/rss+xml" title="Последние заметки в блоге" href="<?php echo S2_PATH; ?>/blog/rss.xml" />

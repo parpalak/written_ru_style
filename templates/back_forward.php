@@ -10,9 +10,7 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 <meta charset="utf-8">
 <title><!-- s2_head_title --></title>
 <!-- s2_meta -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="//fonts.gstatic.com">
-<link rel="preload" href="//tex.s2cms.ru/latex.js" as="script">
+<?php echo common_head(); ?>
 <!-- s2_styles -->
 <!-- s2_navigation_link -->
 <!-- s2_rss_link -->

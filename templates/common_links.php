@@ -1,5 +1,22 @@
 <?php
 
+function common_head() {
+    return <<<TPL
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="//fonts.gstatic.com">
+<link rel="preload" href="//tex.s2cms.ru/latex.js" as="script">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111005644-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111005644-1');
+</script>
+
+TPL;
+}
+
 function menu_item ($class, $name, $url, $title = '')
 {
 	global $request_uri;
@@ -15,8 +32,9 @@ function menu_item ($class, $name, $url, $title = '')
 
 function page_counters ()
 {
-	if (defined('S2_ENV_DEVELOP'))
-		return 'S2_ENV_DEVELOP - counters';
+	if (defined('S2_ENV_DEVELOP')) {
+        return 'S2_ENV_DEVELOP - counters';
+    }
 
 	return '';
 
@@ -40,8 +58,9 @@ screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
 
 function social_stuff ()
 {
-	if (0 && defined('S2_ENV_DEVELOP'))
-		return 'S2_ENV_DEVELOP - social';
+	if (0 && defined('S2_ENV_DEVELOP')) {
+        return 'S2_ENV_DEVELOP - social';
+    }
 
 	return <<<TPL
 <div class="likely">
