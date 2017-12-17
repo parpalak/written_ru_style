@@ -11,7 +11,7 @@ function common_head() {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-111005644-1');
+  gtag('config', 'UA-111005644-1', {'dimension1': window.devicePixelRatio || '-'});
 </script>
 
 TPL;
