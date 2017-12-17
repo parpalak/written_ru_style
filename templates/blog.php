@@ -10,7 +10,6 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 <meta charset="utf-8">
 <title><!-- s2_head_title --></title>
 <!-- s2_meta -->
-<meta name="keywords" content="блог, дневник, сайт">
 <?php echo common_head(); ?>
 <!-- s2_styles -->
 <!-- s2_navigation_link -->
@@ -28,9 +27,9 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 			<!-- s2_title -->
 			<!-- s2_date -->
 			<!-- s2_text -->
-			<!-- s2_blog_back_forward -->
 			<!-- s2_subarticles -->
 		</div>
+        <!-- s2_blog_back_forward -->
 		<div class="social-likes-wrap"><?php echo social_stuff(); ?></div>
 		<div class="comments-block">
 			<!-- s2_comments -->

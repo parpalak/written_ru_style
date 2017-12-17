@@ -1,6 +1,13 @@
 <?php
 
 function common_head() {
+    if (defined('S2_ENV_DEVELOP')) {
+        return <<<TPL
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+TPL;
+    }
+
     return <<<TPL
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="//fonts.gstatic.com">
