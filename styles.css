@@ -249,7 +249,7 @@ kbd {
 		min-height: 380px;
 		color: #fff;
 		width: 36%;
-		margin: 0 auto 0 6%;
+		margin: 0 auto 0 5%;
 		text-shadow: 1px 1px 2px #000;
 		}
 
@@ -295,7 +295,7 @@ ul.project-list {
 				}
 
 .main-info {
-	padding: 2.5em 0 0 6%;
+	padding: 2.5em 0 0 5%;
 	margin-bottom: 2.5em;
 	}
 
@@ -329,7 +329,7 @@ ul.project-list {
 	}
 	.mainpage #copyright,
 	.mainpage .social-likes-wrap {
-		padding-left: 6%;
+		padding-left: 5%;
 		}
 	.mainpage .social-likes-wrap {
 		margin-bottom: 2em;
@@ -616,6 +616,8 @@ img.o, #content img.o {
 
 @media screen and (max-width: 1080px) {
 	.top-info-column {
+		padding-top: 1.5em;
+		padding-top: calc(1em + 2%);
 		margin-right: auto;
 		width: 388px;
 	}
@@ -623,7 +625,6 @@ img.o, #content img.o {
 
 @media screen and (max-width: 960px) {
 	.top-info-column {
-		padding-top: 2.5em;
 		padding-bottom: 0.5em;
 	}
 	.menu-col-1 {
@@ -681,11 +682,6 @@ img.o, #content img.o {
 		margin: 0;
 		width: auto;
 		padding: 1.5em 3% 1.5em 5%;
-	}
-	.mainpage #copyright,
-	.mainpage .social-likes-wrap,
-	.main-info {
-		padding-left: 5%;
 	}
 	#container {
 		margin-top: calc(1em + 2%);
