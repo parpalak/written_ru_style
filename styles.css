@@ -689,6 +689,12 @@ img.o, #content img.o {
 }
 
 @media screen and (max-width: 539px) {
+	#content img[align="left"],
+	#content img[align="right"] {
+		margin: 0;
+		float: none;
+		display: block;
+		}
 	.reply {
 		overflow-wrap: break-word;
 		word-wrap: break-word;
