@@ -433,7 +433,7 @@ img.o, #content img.o {
 
 .aside_column ul.nav-tags-list,
 .aside_column li.nav-tag {
-	display: inline-block;
+	/*display: inline-block;*/
 	}
 	.aside_column li.nav-tag {
 		margin-left: 0.5em;
@@ -441,9 +441,9 @@ img.o, #content img.o {
 	.aside_column li.nav-tag:before {
 		content: '\b7\a0\a0';
 		}
-		.aside_column li.nav-tag:first-child:before {
+/*		.aside_column li.nav-tag:first-child:before {
 			content: '';
-			}
+			}*/
 
 .back-forward {
 	display: flex;
