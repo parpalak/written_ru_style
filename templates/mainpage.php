@@ -10,7 +10,7 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 <meta charset="utf-8">
 <title>Сайт Романа Парпалака</title>
 <!-- s2_meta -->
-<meta property="og:image" content="//written.ru/_styles/written_ru/images/me_4.jpg">
+<meta property="og:image" content="//parpalak.com/_styles/written_ru/images/me_4.jpg">
 <?php echo common_head(); ?>
 <link rel="stylesheet" href="/_styles/written_ru/styles.css">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400&subset=latin,cyrillic,cyrillic-ext">

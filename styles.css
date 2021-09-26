@@ -431,6 +431,12 @@ img.o, #content img.o {
 		content: '\2014\a0';
 		}
 
+.aside-info {
+	padding: 1em 1.2em 1px;
+	margin: 0 0em 1em;
+	background: #fbf6db;
+}
+
 .aside_column ul.nav-tags-list,
 .aside_column li.nav-tag {
 	/*display: inline-block;*/
@@ -771,7 +777,7 @@ img.o, #content img.o {
 	#all, #container, #content, #copyright {	width: auto; margin: 0; padding: 0; border: 0; float: none;}
 	#content, #copyright { margin: 0 5%; }
 	a:link:after, a:visited:after { content: " (" attr(href) ")"; }
-	a[href^="/"]:after { content: " (http://written.ru" attr(href) ")";}
+	a[href^="/"]:after { content: " (https://parpalak.com" attr(href) ")";}
 	a[href^="#"]:after {content: "";}
 }
 
