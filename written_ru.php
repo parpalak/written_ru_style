@@ -24,7 +24,7 @@ return array(
 	// Used to generate content for <!-- s2_styles --> placeholder
 	'css' => array(
 		'styles.css',
-		'//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400&subset=latin,cyrillic,cyrillic-ext',
+//		'//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400&subset=latin,cyrillic,cyrillic-ext',
 		'highlight-js/default.min.css',
 //		'//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css',
 //		'social-likes/social-likes_flat.css',
@@ -33,7 +33,7 @@ return array(
 
 	// Used to generate content for <!-- s2_scripts --> placeholder
 	'js' => array(
-		'//tex.s2cms.ru/latex.js',
+		'//i.upmath.me/latex.js',
 //		'http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
 //		'//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
 		'script.js',

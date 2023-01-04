@@ -10,8 +10,7 @@ TPL;
 
     return <<<TPL
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="//fonts.gstatic.com">
-<link rel="preload" href="//tex.s2cms.ru/latex.js" as="script">
+<link rel="preload" href="//i.upmath.me/latex.js" as="script">
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111005644-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

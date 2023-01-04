@@ -13,7 +13,10 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 <meta property="og:image" content="//parpalak.com/_styles/written_ru/images/me_4.jpg">
 <?php echo common_head(); ?>
 <link rel="stylesheet" href="/_styles/written_ru/styles.css">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400&subset=latin,cyrillic,cyrillic-ext">
+
+<!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400&subset=latin,cyrillic,cyrillic-ext">
+-->
+
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/_styles/written_ru/favicon.png">
 <!-- s2_navigation_link -->
 <!-- s2_rss_link -->
