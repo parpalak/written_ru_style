@@ -61,6 +61,7 @@ body {
 		}
 
 body, textarea, samp, blockquote, input {font: 16px/1.5 Roboto, Arial, sans-serif;}
+input {font-size: 18px;}
 code, kbd, pre {font: 16px/1.5 Consolas, monospace;}
 
 #content pre > code { /*hljs*/
@@ -382,9 +383,6 @@ ul.project-list {
 		font-size: 13px;
 		width: 100%;
 		}
-		.s2_search_form input#s2_search_input.inactive {
-			color: #999;
-			}
 
 hr {
 	border: 0;
