@@ -207,7 +207,17 @@ kbd {
 	background: #f2f2f2;
 	white-space: nowrap;
 }
-
+/* Comment form and message */
+.icon-success, .icon-error{
+	font-size: 6em;
+	float: right;
+	}
+	.icon-success {
+		color: #00af00;
+		}
+	.icon-error {
+		color: #af2000;
+		}
 .input.text textarea {width: 99%; }
 
 #counters {
@@ -350,6 +360,11 @@ ul.project-list {
 		}
 	#content, #content samp, #content blockquote {
 		font-size: 18px;
+	}
+	#content:after {
+		content: "";
+		display: table;
+		clear: both;
 	}
 	#content, .comments-block, .aside_column {
 		max-width: 768px;
@@ -730,6 +745,10 @@ img.o, #content img.o {
 	}
 	#container {
 		margin-top: calc(1em + 2%);
+	}
+	.icon-success, .icon-error{
+		float: none;
+		display: block;
 	}
 }
 

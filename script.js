@@ -7,7 +7,7 @@
 
         function save() {
             var text = frm['text'].value,
-                id   = 'comment_text_' + frm['id'].value;
+                id = 'comment_text_' + frm['id'].value;
 
             if (text) {
                 localStorage.setItem(id, text);
@@ -20,8 +20,9 @@
         }
 
         try {
-            if (!('localStorage' in window) || window['localStorage'] === null)
+            if (!('localStorage' in window) || window['localStorage'] === null) {
                 return;
+            }
 
             if (document.cookie.indexOf('comment_form_sent=') != -1) {
                 var id = document.cookie.replace(/(?:(?:^|.*;\s*)comment_form_sent\s*\=\s*([^;]*).*$)|^.*$/, "$1");
@@ -42,14 +43,14 @@
             frm['text'].addEventListener('change', save, false);
             document.forms['post_comment'].addEventListener('submit', save, false);
 
-            frm['name'].value         = frm['name'].value || localStorage.getItem('comment_name');
-            frm['email'].value        = frm['email'].value || localStorage.getItem('comment_email');
+            frm['name'].value = frm['name'].value || localStorage.getItem('comment_name');
+            frm['email'].value = frm['email'].value || localStorage.getItem('comment_email');
             frm['show_email'].checked = frm['show_email'].checked || !!(localStorage.getItem('comment_showemail') - 0);
 
             save();
             setInterval(save, 5000);
+        } catch (e) {
         }
-        catch (e) {}
     }
 
     // Ctrl + arrows navigation
@@ -64,19 +65,21 @@
     }
 
     function navigateThrough(e) {
-        e = e || window.event;
-
-        if (!(e.ctrlKey || e.metaKey) || inpFocused)
+        if (!(e.ctrlKey || e.metaKey) || inpFocused) {
             return;
+        }
 
         var link = false;
-        switch (e.keyCode ? e.keyCode : e.which ? e.which : null) {
+        switch (e.code || e.keyCode || e.which) {
+            case 'ArrowRight':
             case 0x27:
                 link = nextLink;
                 break;
+            case 'ArrowLeft':
             case 0x25:
                 link = prevLink;
                 break;
+            case 'ArrowUp':
             case 0x26:
                 link = upLink;
                 break;
@@ -84,24 +87,22 @@
 
         if (link) {
             document.location = link;
-//			if (window.event)
-//				window.event.returnValue = false;
-//			if (e.preventDefault)
-//				e.preventDefault();
         }
     }
 
     function initNavigate() {
+        if (!document.getElementsByTagName) {
+            return;
+        }
+
         var e, i, ae = document.getElementsByTagName('LINK');
         for (i = ae.length; i--;) {
             e = ae[i];
-            if (e.rel == 'next') {
+            if (e.rel === 'next') {
                 nextLink = e.href;
-            }
-            else if (e.rel == 'prev') {
+            } else if (e.rel === 'prev') {
                 prevLink = e.href;
-            }
-            else if (e.rel == 'up') {
+            } else if (e.rel === 'up') {
                 upLink = e.href;
             }
         }
@@ -111,7 +112,7 @@
         ae = document.getElementsByTagName('INPUT');
         for (i = ae.length; i--;) {
             e = ae[i];
-            if (e.type == 'text' || e.type == 'password' || e.type == 'search') {
+            if (e.type === 'text' || e.type === 'password' || e.type === 'search') {
                 e.addEventListener('focus', focus, true);
                 e.addEventListener('blur', blur, true);
             }
@@ -125,6 +126,8 @@
         }
     }
 
+    var started = false;
+
     function Init() {
         if (started) {
             return;
@@ -136,12 +139,10 @@
         initStorage();
     }
 
-    var started = false;
-
     document.addEventListener('DOMContentLoaded', Init, false);
     addEventListener('load', function () {
             Init();
-            new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";h" + escape(document.title.substring(0, 80)) + ";" + Math.random();
+            new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof (screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";h" + escape(document.title.substring(0, 80)) + ";" + Math.random();
         }
         , true);
 })();
