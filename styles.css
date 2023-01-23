@@ -379,6 +379,12 @@ ul.project-list {
 			width: 90vw;
 			max-width: 1332px;
 			}
+		#content {
+			max-width: inherit;
+			}
+			#content > * {
+				max-width: 768px;
+				}
 
 #copyright {
 	padding: 1em 0 10px 5%;
