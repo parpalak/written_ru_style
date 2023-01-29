@@ -112,7 +112,7 @@ a.img-link {
 p, blockquote, pre, samp {
 	margin: 0 0 0.9em;
 }
-h1, h2, h3, h4, .aside_column .header {
+h1, h2, h3, h4 {
 	line-height: 1.3;
 }
 h1 {
@@ -127,10 +127,7 @@ h2 {
 	font-size: 150%;
 	margin: 1.0em 0 0.25em;
 }
-h2.comment {
-	margin-top: 2em;
-}
-h3, h2.preview, h2.comment.form {
+h3, h2.preview, h2.comment, h2.recommendation-title {
 	font-size: 125%;
 	line-height: 1.25;
 	margin: 1.25em 0 0.325em 0;
@@ -141,8 +138,12 @@ h2+h3 {
 h3.subsection, h3.article, h2.preview {
 	margin-bottom: 0;
 }
-h4, .aside_column .header {
+h4 {
 	font-size: 18px;
+	font-weight: bold;
+	margin: 1em 0 0.25em;
+}
+.aside_column .header {
 	font-weight: bold;
 	margin: 1em 0 0.25em;
 }
@@ -368,10 +369,10 @@ ul.project-list {
 	}
 	#content, .comments-block, .aside_column {
 		max-width: 768px;
-		margin: 0 0 3em;
-		margin: 0 0 3rem;
+		margin: 0 0 2em;
+		margin: 0 0 2rem;
 		}
-		.tags_list {
+	#content .tags_list {
 			-webkit-columns: 13em;
 			-moz-columns: 13em;
 			columns: 13em;
@@ -529,6 +530,105 @@ img.o, #content img.o {
 	.back-forward .empty {
 		color: #ccc;
 		}
+
+.recommendation-video-wrapper {
+	}
+	.recommendation-video-wrapper:after {
+		content: '';
+		background: center/64px #fff url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMiIgaGVpZ2h0PSIyMiI+PHBhdGggZD0iTTE2IDExIDggMTdWNXoiLz48L3N2Zz4=");
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 64px;
+		height: 64px;
+		margin: -32px;
+		border-radius: 50%;
+		opacity: 0.1;
+		}
+
+.recommendation-img-wrapper {
+	position: relative;
+	overflow: hidden; /* remove black fields on youtube images */
+	}
+	.recommendation-img-wrapper .recommendation-img {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		}
+.recommendation-header {
+	font-weight: bold;
+}
+.recommendation-date {
+	color: #aaa;
+	}
+@media screen and (max-width: 719px) {
+	.recommendation {
+		margin: 0 0 1em;
+		}
+		.recommendation-img-right-wrapper {
+			width: auto !important;
+			height: auto !important;
+			padding-top: 0 !important;
+		}
+		.recommendation-img-thumb-wrapper {
+			width: auto !important;
+			height: auto !important;
+		}
+		.recommendation-img {
+			max-width: 100%;
+		}
+}
+@media screen and (min-width: 720px) {
+	.recommendations {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0.625em 1.5%;
+		}
+		.recommendation-img-right-wrapper,
+		.recommendation-img-thumb-wrapper {
+			position: relative;
+			}
+		.recommendation-img-thumb-wrapper {
+			float: left;
+			}
+		.recommendation-img-right-wrapper {
+			float: right;
+			margin: 0 2%;
+			}
+			.recommendation-img-right-wrapper .recommendation-img,
+			.recommendation-img-thumb-wrapper .recommendation-img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				}
+		.recommendation-link {
+
+			}
+
+		.recommendation-snippet {
+			overflow: hidden; /*avoid floating around recommendation-img-right-wrapper*/
+			}
+		.recommendation:after {
+			content: ".";
+			display: block;
+			clear: both;
+			visibility: hidden;
+			line-height: 0;
+			height: 0;
+			}
+		.recommendation-header-2 {
+			font-size: 1.5em;
+			line-height: 1.25;
+			}
+		.recommendation-header-1 {
+			font-size: 1em;
+			}
+}
 
 .paging a, .paging .current {
 	display: inline-block;
@@ -821,7 +921,9 @@ img.o, #content img.o {
 	margin: -0.6em 0 3em 0;
 	line-height: 23px;
 }
-
+#content .post.foot:last-child {
+	margin-bottom: 0;
+}
 .favorite-star {
 	display: block;
 	margin-left: -24px;

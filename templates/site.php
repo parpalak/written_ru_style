@@ -36,6 +36,7 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 			<!-- s2_menu_siblings -->
 			<!-- s2_blog_tags -->
 		</div>
+        <!-- s2_recommendations -->
 		<div class="comments-block">
 			<!-- s2_comments -->
 			<!-- s2_comment_form -->

@@ -29,8 +29,9 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 			<!-- s2_text -->
 			<!-- s2_subarticles -->
 		</div>
+        <div class="social-likes-wrap"><?php echo social_stuff(); ?></div>
         <!-- s2_blog_back_forward -->
-		<div class="social-likes-wrap"><?php echo social_stuff(); ?></div>
+        <!-- s2_recommendations -->
 		<div class="comments-block">
 			<!-- s2_comments -->
 			<!-- s2_comment_form -->
