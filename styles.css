@@ -173,8 +173,8 @@ textarea {overflow: auto; vertical-align: top;}
 
 blockquote, samp {
 	text-align: left;
-	padding: 0;
-	margin-left: 2.2em;
+	padding: 0 0 0 2.2em;
+	box-sizing: border-box;
 	}
 	blockquote {
 		color: #840;
@@ -385,6 +385,11 @@ ul.project-list {
 			}
 			#content > * {
 				max-width: 768px;
+				}
+			#content > pre {
+				display: inline-block;
+				max-width: 100%;
+				min-width: min(768px, 100%);
 				}
 
 #copyright {
@@ -859,6 +864,11 @@ img.o, #content img.o {
 }
 
 @media screen and (max-width: 539px) {
+	blockquote, samp {
+		padding-left: 8px;
+		border-left: 2px solid rgba(136, 68, 0, 0.3);
+	}
+
 	#content img[align="left"],
 	#content img[align="right"] {
 		margin: 0;
@@ -910,9 +920,6 @@ img.o, #content img.o {
 
 #content .post.head {
 	margin: 1.0em 0 0.5em;
-}
-#content .post.body {
-	margin: 0 0 1em;
 }
 #content .post.foot {
 	color: #666;

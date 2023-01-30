@@ -25,10 +25,9 @@
 	<?php echo s2_htmlencode($title); ?>
 <?php } ?>
 </h2>
-<div class="post body"><?php
+<?php
 	echo $text;
 ?>
-</div>
 <div class="post foot">
 <?php
 	$footer = [$time];
