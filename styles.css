@@ -219,12 +219,18 @@ kbd {
 	.icon-error {
 		color: #af2000;
 		}
-.input.text textarea {width: 99%; }
+.input.text textarea {width: 100%; box-sizing: border-box;}
+p.input.buttons {
+	margin: 0;
+	}
+	p.input.buttons input {
+		margin: 0 0.6em 0.8em 0;
+		}
 
 #counters {
 	float: right;
-	width: 22.5%;
-	padding: 0.75em 7.5% 0 0;
+	width: 27%;
+	padding: 0.75em 3% 0 0;
 	}
 	.counter-code {
 		display: none;
@@ -236,7 +242,7 @@ kbd {
 	color: #fff;
 	height: 35px;
 	line-height: 35px;
-	padding: 0 5%;
+	padding: 0 3%;
 	overflow: hidden;
 	}
 	.error404 #header-crumbs {
@@ -302,7 +308,7 @@ kbd {
 		min-height: 380px;
 		color: #fff;
 		width: 36%;
-		margin: 0 auto 0 5%;
+		margin: 0 auto 0 3%;
 		text-shadow: 1px 1px 2px #000;
 		}
 
@@ -348,12 +354,12 @@ ul.project-list {
 				}
 
 .main-info {
-	padding: 2.5em 0 0 5%;
+	padding: 2.0em 0 0 3%;
 	margin-bottom: 2.5em;
 	}
 
 #container {
-	margin: 3em 5% 0;
+	margin: 3em 3% 0;
 	}
 	.social-likes-wrap {
 		margin-bottom: 3em;
@@ -393,12 +399,12 @@ ul.project-list {
 				}
 
 #copyright {
-	padding: 1em 0 10px 5%;
+	padding: 1em 0 10px 3%;
 	font-size: 13px;
 	}
 	.mainpage #copyright,
 	.mainpage .social-likes-wrap {
-		padding-left: 5%;
+		padding-left: 3%;
 		}
 	.mainpage .social-likes-wrap {
 		margin-bottom: 2em;
@@ -409,6 +415,7 @@ ul.project-list {
 	.s2_search_form input#s2_search_input {
 		font-size: 13px;
 		width: 100%;
+		box-sizing: border-box;
 		}
 
 hr {
@@ -741,22 +748,22 @@ img.o, #content img.o {
 
 @media screen and (min-width: 1500px) {
 	#header-crumbs {
-		padding-left: calc(50% - 1480px * 0.45); /* 0.45 = 50% - 5% */
+		padding-left: calc(50% - 1500px * 0.47); /* 0.47 = 50% - 3% */
 	}
 
 	#container {
-		margin-left: calc(50% - 1480px * 0.45); /* 0.45 = 50% - 5% */
-		margin-right: calc(50% - 1480px * 0.45); /* 0.45 = 50% - 5% */
+		margin-left: calc(50% - 1500px * 0.47); /* 0.47 = 50% - 3% */
+		margin-right: calc(50% - 1500px * 0.47); /* 0.47 = 50% - 3% */
 	}
 
 	#counters {
 		float: right;
-		width: 338px;
-		padding-right: calc(50% - 1480px * 0.425); /* 0.425 = 50% - 7.55% */
+		width: 405px; /* 405 = 0.27*1500 */
+		padding-right: calc(50% - 1500px * 0.47); /* 0.47 = 50% - 3% */
 	}
 
 	#copyright {
-		padding-left: calc(50% - 1480px * 0.45); /* 0.45 = 50% - 5% */
+		padding-left: calc(50% - 1500px * 0.47); /* 0.47 = 50% - 3% */
 	}
 
 	.menu-col-1,
@@ -814,16 +821,17 @@ img.o, #content img.o {
 
 @media screen and (max-width: 780px) and (-webkit-min-device-pixel-ratio: 1.5),
 	screen and (max-width: 780px) and (min-resolution: 1.5dppx) {
-	#content img {
-		height: auto;
-		max-width: 100%;
+	#content img { /* overwrite 90vw in content */
+		height: auto !important;
+		max-width: 100% !important;
 	}
 	#content embed {
 		max-width: 100%;
 		height: auto;
 	}
 	input {
-		max-width: 100%
+		max-width: 100%;
+		box-sizing: border-box;
 	}
 	.video-wrapper,
 	.video-wrapper-43 {
@@ -843,16 +851,49 @@ img.o, #content img.o {
 		width: 100%;
 		height: 100%;
 	}
+
+	#header-crumbs {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.crumbs-wrapper {
+		padding-left: 3%;
+		padding-right: 3%;
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+		-webkit-mask-image: linear-gradient(
+			90deg,
+			transparent 0, rgba(0, 0, 0, .25) 9px,
+			#000 18px,
+			#000 calc(100% - 18px),
+			rgba(0, 0, 0, .25) calc(100% - 9px),
+			transparent
+		);
+		mask-image: linear-gradient(
+			90deg,
+			transparent 0, rgba(0, 0, 0, .25) 9px,
+			#000 18px,
+			#000 calc(100% - 18px),
+			rgba(0, 0, 0, .25) calc(100% - 9px),
+			transparent
+		);
+	}
 }
 
 @media screen and (max-width: 639px) {
+	h1 {
+		font-size: 150%;
+		}
 	.top-info-img {
 		background: #000;
 	}
 	.top-info-column {
 		margin: 0;
 		width: auto;
-		padding: 1.5em 3% 1.5em 5%;
+		padding: 1.5em 3%;
+		min-height: auto;
 	}
 	#container {
 		margin-top: calc(1em + 2%);
@@ -880,7 +921,7 @@ img.o, #content img.o {
 		word-wrap: break-word;
 	}
 	.main-info {
-		padding: 1.5em 3% 0 5%;
+		padding: 1.5em 3% 0 3%;
 	}
 	.menu-col-1 {
 		width: 100%;
@@ -892,7 +933,7 @@ img.o, #content img.o {
 	#counters, .mainpage #counters {
 		float: none;
 		width: auto;
-		padding: 0.75em 5%;
+		padding: 0.75em 3%;
 	}
 }
 
@@ -906,6 +947,7 @@ img.o, #content img.o {
 		}
 }
 
+#content .year-content,
 .year-content {
 	width: 90vw;
 	max-width: 1000px;

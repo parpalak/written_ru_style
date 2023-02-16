@@ -23,7 +23,7 @@ df;
 return array(
 	// Used to generate content for <!-- s2_styles --> placeholder
 	'css' => array(
-		'styles.css',
+		'styles.css?3',
 //		'//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400&subset=latin,cyrillic,cyrillic-ext',
 		'highlight-js/default.min.css',
 //		'//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css',
