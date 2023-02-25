@@ -24,7 +24,7 @@ return array(
 	),
 	'js_inline' => array(
 //		'<script>alert(\'test\');</script>',
-		'<script>hljs.initHighlightingOnLoad();</script>',
+		'<script>document.addEventListener(\'DOMContentLoaded\', function () { hljs.initHighlightingOnLoad(); });</script>',
 	),
 	'favicon' => 'favicon.png',
 );
