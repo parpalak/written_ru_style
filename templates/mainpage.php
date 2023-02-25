@@ -43,21 +43,5 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
     <link rel="stylesheet" href="/_extensions/s2_search/style.css">
     <link rel="stylesheet" href="/_extensions/s2_blog/style.css?3">
     <!-- s2_scripts -->
-    <script>
-        var img = new Image();
-        img.src = '/_styles/written_ru/images/me_4.jpg';
-
-        if (!img.complete) {
-            img.onload = function() {
-                if (!this.wasLoaded) {
-                    document.getElementById('top-info-back').className = 'top-info-back';
-                    this.wasLoaded = 1;
-                }
-            };
-        }
-        else {
-            document.getElementById('top-info-back').className = 'top-info-back';
-        }
-    </script>
 </body>
 </html>

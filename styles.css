@@ -267,8 +267,11 @@ p.input.buttons {
 	}
 	.top-info-img {
 		height: 100%;
+		width: 100%;
+		display: block;
 		max-width: 2020px;
 		margin: 0 auto;
+		object-fit: cover;
 	}
 	.top-info-back {
 		position: absolute;
@@ -282,25 +285,7 @@ p.input.buttons {
 		}
 	.top-info-back {
 		background: #000;
-
-		-webkit-transition: transform .2s ease-in;
-		-moz-transition: transform .2s ease-in;
-		transition: transform .2s ease-in;
 		}
-		.top-info-back.unloaded {
-			transform: translate(0, -3px);
-			}
-		.top-info-img {
-			background: url(images/me_4.jpg) 33% 68% no-repeat;
-			background-size: cover;
-
-			-webkit-transition: opacity .2s ease-in;
-			-moz-transition: opacity .2s ease-in;
-			transition: opacity .2s ease-in;
-			}
-			.unloaded .top-info-img {
-				opacity: 0;
-				}
 	.top-info-column {
 		position: relative;
 		z-index: 2;
@@ -851,7 +836,9 @@ img.o, #content img.o {
 		width: 100%;
 		height: 100%;
 	}
-
+	.main-info {
+		padding: 1em 3% 0;
+	}
 	#header-crumbs {
 		padding-left: 0;
 		padding-right: 0;
@@ -885,14 +872,19 @@ img.o, #content img.o {
 @media screen and (max-width: 639px) {
 	h1 {
 		font-size: 150%;
+		margin-bottom: 1em;
 		}
-	.top-info-img {
+	.top-info-back {
+		height: 330px;
+	}
+	.top-info {
 		background: #000;
+		padding-top: 330px;
 	}
 	.top-info-column {
 		margin: 0;
 		width: auto;
-		padding: 1.5em 3%;
+		padding: 1.5em 3% 0.5em;
 		min-height: auto;
 	}
 	#container {
@@ -902,9 +894,21 @@ img.o, #content img.o {
 		float: none;
 		display: block;
 	}
+	h3, h2.preview, h2.comment, h2.recommendation-title {
+		margin: 0.5em 0 0.25em;
+	}
+	h2+h3 {
+		margin-top: 0.375em;
+	}
 }
 
 @media screen and (max-width: 539px) {
+	.top-info-back {
+		height: calc(42.59vw + 100px);
+	}
+	.top-info {
+		padding-top: calc(42.59vw + 100px);
+	}
 	blockquote, samp {
 		padding-left: 8px;
 		border-left: 2px solid rgba(136, 68, 0, 0.3);
@@ -921,7 +925,7 @@ img.o, #content img.o {
 		word-wrap: break-word;
 	}
 	.main-info {
-		padding: 1.5em 3% 0 3%;
+		padding: 1em 3% 0;
 	}
 	.menu-col-1 {
 		width: 100%;
