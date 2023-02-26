@@ -1,30 +1,17 @@
 <?php
 
-// Feel free to add your own styles and scripts
-// Paths here are relative to the template (this file).
-return array(
-	// Used to generate content for <!-- s2_styles --> placeholder
-	'css' => array(
-		'styles.css?4',
-//		'//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400&subset=latin,cyrillic,cyrillic-ext',
-		'highlight-js/default.min.css',
-//		'//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css',
-//		'social-likes/social-likes_flat.css',
-	),
-	'css_inline' => array(),
+use S2\Cms\Asset\AssetPack;
 
-	// Used to generate content for <!-- s2_scripts --> placeholder
-	'js' => array(
-		'//i.upmath.me/latex.js',
-//		'http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js',
-//		'//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js',
-		'script.js',
-		'highlight-js/highlight.min.js',
-//		'social-likes/social-likes.min.js',
-	),
-	'js_inline' => array(
-//		'<script>alert(\'test\');</script>',
-		'<script>document.addEventListener(\'DOMContentLoaded\', function () { hljs.initHighlightingOnLoad(); });</script>',
-	),
-	'favicon' => 'favicon.png',
-);
+return (new AssetPack())
+    ->setVersion(5)
+    ->addMeta('<meta name="viewport" content="width=device-width, initial-scale=1">')
+    ->addCss('styles.css', [AssetPack::OPTION_MERGE])
+    ->addCss('highlight-js/default.min.css')
+    ->addHeadJs('https://www.googletagmanager.com/gtag/js?id=G-LZD7Q0K8SM', [AssetPack::OPTION_ASYNC])
+    ->addHeadInlineJs("<script>  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-LZD7Q0K8SM', {'dimension1': window.devicePixelRatio || '-'});</script>")
+    ->addJs('//i.upmath.me/latex.js', [AssetPack::OPTION_PRELOAD, AssetPack::OPTION_DEFER]) // todo понять, почему не через расширение. чтобы РСС не преобразовывать?
+    ->addJs('script.js', [AssetPack::OPTION_MERGE, AssetPack::OPTION_DEFER])
+    ->addJs('highlight-js/highlight.min.js', [AssetPack::OPTION_DEFER])
+    ->addInlineJs('<script>document.addEventListener(\'DOMContentLoaded\', function () { hljs.initHighlightingOnLoad(); });</script>')
+    ->setFavIcon('favicon.png')
+;

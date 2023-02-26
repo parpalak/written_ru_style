@@ -1,28 +1,5 @@
 <?php
 
-function common_head() {
-    if (defined('S2_ENV_DEVELOP')) {
-        return <<<TPL
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-TPL;
-    }
-
-    return <<<TPL
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preload" href="//i.upmath.me/latex.js" as="script">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZD7Q0K8SM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LZD7Q0K8SM', {'dimension1': window.devicePixelRatio || '-'});
-</script>
-
-TPL;
-}
-
 function page_counters ()
 {
 	if (defined('S2_ENV_DEVELOP')) {
