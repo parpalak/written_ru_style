@@ -11,30 +11,17 @@ TPL;
     return <<<TPL
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preload" href="//i.upmath.me/latex.js" as="script">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111005644-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZD7Q0K8SM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-111005644-1', {'dimension1': window.devicePixelRatio || '-'});
+  gtag('config', 'G-LZD7Q0K8SM', {'dimension1': window.devicePixelRatio || '-'});
 </script>
 
 TPL;
 }
-
-function menu_item ($class, $name, $url, $title = '')
-{
-	global $request_uri;
-
-	$inner = '<span class="'.$class.' icon"></span><br />'.$name.'';
-
-	if ($url == $request_uri)
-		return '<div class="current" title="'.$title.'">'.$inner.'</div>';
-	else
-		return '<a title="'.$title.'" href="'.$url.'"'.(0 === strpos($request_uri, $url) ? ' class="current"' : '').'>'.$inner.'</a>';
-}
-
 
 function page_counters ()
 {
