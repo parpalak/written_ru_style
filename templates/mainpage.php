@@ -33,9 +33,6 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 
         <div id="copyright"><!-- s2_copyright --><br /><!-- s2_querytime --></div><!-- s2_debug -->
     </div>
-    <link rel="stylesheet" href="/_styles/written_ru/highlight-js/default.min.css">
-    <link rel="stylesheet" href="/_extensions/s2_search/style.css">
-    <link rel="stylesheet" href="/_extensions/s2_blog/style.css?3">
     <!-- s2_scripts -->
 </body>
 </html>

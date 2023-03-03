@@ -1,9 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 use S2\Cms\Asset\AssetPack;
 
-return (new AssetPack())
-    ->setVersion(5)
+return (new AssetPack(__DIR__))
     ->addMeta('<meta name="viewport" content="width=device-width, initial-scale=1">')
     ->addCss('styles.css', [AssetPack::OPTION_MERGE])
     ->addCss('highlight-js/default.min.css')
