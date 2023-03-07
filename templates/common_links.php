@@ -13,13 +13,13 @@ function page_counters ()
 ?>
 <span class="counter-code">
 <script type="text/javascript">
-document.write('<a href="http://www.liveinternet.ru/click" '+
-'target=_blank><img src="//counter.yadro.ru/hit?t15.14;r'+
+var img = new Image();
+img.src = '//counter.yadro.ru/hit?t15.14;r'+
 escape(document.referrer)+((typeof(screen)=='undefined')?'':
 ';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
 screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
-';i'+escape(document.title.substring(0,80))+';'+Math.random()+
-'" alt="" border=0 width=88 height=31><\/a>')</script>
+';i'+escape(document.title.substring(0,80))+';'+Math.random();
+</script>
 </span>
 <?php
 
