@@ -45,7 +45,6 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 	<div id="counters">
 		<!-- s2_search_field -->
 		<!--  s2_counter_img -->
-		<?php echo page_counters();?>
 	</div>
 <!--/noindex-->
 	<div id="copyright"><!-- s2_copyright --><br /><!-- s2_querytime --></div><!-- s2_debug -->
