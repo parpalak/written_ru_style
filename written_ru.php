@@ -10,6 +10,8 @@ return (new AssetPack(__DIR__))
     ->addHeadInlineJs("<script>  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-LZD7Q0K8SM', {'dimension1': window.devicePixelRatio || '-'});</script>")
     ->addJs('//i.upmath.me/latex.js', [AssetPack::OPTION_PRELOAD, AssetPack::OPTION_DEFER]) // todo понять, почему не через расширение. чтобы РСС не преобразовывать?
     ->addJs('script.js', [AssetPack::OPTION_MERGE, AssetPack::OPTION_DEFER])
+    ->addJs('likely2.8/likely.min.js', [AssetPack::OPTION_MERGE])
+    ->addCss('likely2.8/likely.css', [AssetPack::OPTION_MERGE])
     ->addJs('highlight-js/highlight.min.js', [AssetPack::OPTION_DEFER])
     ->addInlineJs('<script>document.addEventListener(\'DOMContentLoaded\', function () { hljs.initHighlightingOnLoad(); });</script>')
     ->setFavIcon('favicon.png')
