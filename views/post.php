@@ -39,7 +39,15 @@
 	}
 
 	if ($commented && S2_SHOW_COMMENTS) {
-        $footer['comments'] = '<a href="'.$link.'#comment">'.($comment_num ? sprintf(Lang::get('Comments', 's2_blog'), $comment_num) : (S2_ENABLED_COMMENTS ? Lang::get('Post comment', 's2_blog') : '')).'</a>';
+        if ($comment_num) {
+            if (substr(S2_LANGUAGE, 0, 7) === 'Russian') {
+                $footer['comments'] = '<a href="' . $link . '#comment">' . sprintf(s2_russian_plural((int)$comment_num, '%d комментариев', '%d комментарий', '%d комментария'), $comment_num) . '</a>';
+            } else {
+                $footer['comments'] = '<a href="' . $link . '#comment">' . sprintf(Lang::get('Comments', 's2_blog'), $comment_num) . '</a>';
+            }
+        } else {
+            $footer['comments'] = '<a href="' . $link . '#add-comment">' . ((S2_ENABLED_COMMENTS ? Lang::get('Post comment', 's2_blog') : '')) . '</a>';
+        }
     }
 
 	echo implode(' &nbsp; &nbsp; ', $footer);
