@@ -438,6 +438,9 @@ hr:after {
 	line-height: 20px;
 	margin: -24px 0 24px;
 	}
+	div.post.time {
+		margin: -11px 0 12px;
+		}
 	.subsection.time {
 		margin: -16px 0 16px;
 		}
