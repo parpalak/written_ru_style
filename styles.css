@@ -984,6 +984,21 @@ img.o, #content img.o {
 	margin: -0.6em 0 3em 0;
 	line-height: 23px;
 }
+	.post-tags {
+		padding: 0 0 0 16px;
+	}
+	.post-comments {
+		padding: 0 0 0 16px;
+		background: url(images/icon_comment.svg) 0 75% no-repeat;
+	}
+.tag-title, .post-tags {
+	background: url(images/icon_tag.svg) 0 75% no-repeat;
+}
+.tag-title {
+	padding: 0 0 0 28px;
+	background-size: 24px;
+	margin-left: -4px;
+}
 #content .post.foot:last-child {
 	margin-bottom: 0;
 }

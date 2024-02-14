@@ -34,20 +34,20 @@ echo $text;
     $footer = [];
 
     if (!empty($tags)) {
-        $footer['tags'] = implode('&nbsp;&middot; ', array_map(static function (array $tag) {
+        $footer['tags'] = '<span class="post-tags">' . implode('&nbsp;&middot; ', array_map(static function (array $tag) {
             return '<a href="'.$tag['link'].'">'.$tag['title'].'</a>';
-        }, $tags));
+        }, $tags)). '</span>';
     }
 
     if ($commented && S2_SHOW_COMMENTS) {
         if ($comment_num) {
             if (substr(S2_LANGUAGE, 0, 7) === 'Russian') {
-                $footer['comments'] = '<a href="' . $link . '#comment">' . sprintf(s2_russian_plural((int)$comment_num, '%d комментариев', '%d комментарий', '%d комментария'), $comment_num) . '</a>';
+                $footer['comments'] = '<span class="post-comments"><a href="' . $link . '#comment">' . sprintf(s2_russian_plural((int)$comment_num, '%d комментариев', '%d комментарий', '%d комментария'), $comment_num) . '</a></span>';
             } else {
-                $footer['comments'] = '<a href="' . $link . '#comment">' . sprintf(Lang::get('Comments', 's2_blog'), $comment_num) . '</a>';
+                $footer['comments'] = '<span class="post-comments"><a href="' . $link . '#comment">' . sprintf(Lang::get('Comments', 's2_blog'), $comment_num) . '</a></span>';
             }
         } else {
-            $footer['comments'] = '<a href="' . $link . '#add-comment">' . (S2_ENABLED_COMMENTS ? Lang::get('Post comment', 's2_blog') : '') . '</a>';
+            $footer['comments'] = '<span class="post-comments"><a href="' . $link . '#add-comment">' . (S2_ENABLED_COMMENTS ? Lang::get('Post comment', 's2_blog') : '') . '</a></span>';
         }
     }
 
