@@ -10,7 +10,6 @@ function social_stuff ()
 <div class="likely">
 	<div class="facebook">Поделиться</div>
 	<div class="vkontakte">Поделиться</div>
-	<div class="twitter" data-via="r_parpalak">Твитнуть</div>
 </div>
 TPL;
 }
