@@ -563,6 +563,7 @@ img.o, #content img.o {
 		top: 0;
 		bottom: 0;
 		margin: auto;
+		background: repeating-conic-gradient(#eee 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
 		}
 .recommendation-header {
 	font-weight: bold;
