@@ -117,6 +117,7 @@ p, blockquote, pre, samp {
 	margin: 0 0 0.9em;
 }
 h1, h2, h3, h4 {
+	text-wrap: balance;
 	line-height: 1.3;
 }
 h1 {
