@@ -7,7 +7,7 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <title><!-- s2_head_title --></title>
 <!-- s2_meta -->
 <!-- s2_styles -->

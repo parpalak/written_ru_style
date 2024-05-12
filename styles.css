@@ -64,9 +64,9 @@ body {
 		background: #eeeceb;
 		}
 
-body, textarea, samp, blockquote, input {font: 16px/1.5 Roboto, Arial, sans-serif;}
-input {font-size: 18px;}
-code, kbd, pre {font: 16px/1.5 Consolas, monospace;}
+body, textarea, samp, blockquote, input {font: 1rem/1.5 Roboto, Arial, sans-serif;}
+input {font-size: 1.125rem;}
+code, kbd, pre {font: 1rem/1.5 Consolas, monospace;}
 
 #content pre > code { /*hljs*/
 	display: block;
@@ -143,7 +143,7 @@ h3.subsection, h3.article, h2.preview {
 	margin-bottom: 0;
 }
 h4 {
-	font-size: 18px;
+	font-size: 1.125rem;
 	font-weight: bold;
 	margin: 1em 0 0.25em;
 }
@@ -160,7 +160,7 @@ h2 small, a.preview_section {
 
 sub,
 sup {
-	font-size: 13px;
+	font-size: 0.8125rem;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
@@ -173,7 +173,7 @@ a img { border: 0;}
 button::-moz-focus-inner, input::-moz-focus-inner {border: 0;padding: 0;}
 textarea {overflow: auto; vertical-align: top;}
 
-#content small { font-size: 14px;}
+#content small { font-size: 0.875rem;}
 
 blockquote, samp {
 	text-align: left;
@@ -241,7 +241,7 @@ p.input.buttons {
 		}
 
 #header-crumbs {
-	font-size: 14px;
+	font-size: 0.875rem;
 	background: #0d3223;
 	color: #fff;
 	height: 35px;
@@ -357,7 +357,7 @@ ul.project-list {
 			vertical-align: top; /* fix for vertical shift */
 			}
 	#content, #content samp, #content blockquote {
-		font-size: 18px;
+		font-size: 1.125rem;
 	}
 	#content:after {
 		content: "";
@@ -391,7 +391,7 @@ ul.project-list {
 
 #copyright {
 	padding: 1em 0 10px 3%;
-	font-size: 13px;
+	font-size: 0.8125rem;
 	}
 	.mainpage #copyright,
 	.mainpage .social-likes-wrap {
@@ -404,7 +404,7 @@ ul.project-list {
 .s2_search_form {
 	}
 	.s2_search_form input#s2_search_input {
-		font-size: 13px;
+		font-size: 0.8125rem;
 		width: 100%;
 		box-sizing: border-box;
 		}
@@ -433,7 +433,7 @@ hr:after {
 }
 
 .date, .time {
-	font-size: 14px;
+	font-size: 0.875rem;
 	color: #767676;
 	line-height: 20px;
 	margin: -24px 0 24px;
@@ -570,7 +570,7 @@ img.o, #content img.o {
 	}
 .recommendation-date {
 	color: #767676;
-	font-size: 14px;
+	font-size: 0.875rem;
 	}
 @media screen and (max-width: 719px) {
 	.recommendation {
@@ -679,7 +679,7 @@ img.o, #content img.o {
 	}
 
 .main-menu {
-	font-size: 0;
+	font-size: 0rem;
 	line-height: 0;
 	margin: 0 0 20px;
 	}
@@ -693,8 +693,8 @@ img.o, #content img.o {
 			border-bottom-color: #fa9;
 			}
 	.main-menu-item {
-		font-size: 16px;
-		line-height: 20px;
+		font-size: 1rem;
+		line-height: 1.25;
 		display: inline-block;
 		vertical-align: top;
 		margin: 0 3% 1em 0;
@@ -969,9 +969,8 @@ img.o, #content img.o {
 	margin-right: -2em;
 }
 
-.year-block,
-.year-block .cal th {
-	font-size: 14px;
+.year-block {
+	font-size: 1rem;
 }
 .cal td a { border: 0; }
 
@@ -980,7 +979,7 @@ img.o, #content img.o {
 }
 #content .post.foot {
 	color: #767676;
-	font-size: 14px;
+	font-size: 0.875rem;
 	border-top: 0;
 	margin: -0.6em 0 3em 0;
 	line-height: 23px;
