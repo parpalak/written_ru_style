@@ -1,5 +1,6 @@
 <?php
 
+/** @var callable $trans */
 /** @var $author string */
 /** @var $title string */
 /** @var $title_link string */
@@ -10,6 +11,7 @@
 /** @var $commented bool */
 /** @var $comment_num int */
 /** @var $favorite bool */
+/** @var $favoritePostsUrl string */
 
 ?>
 <div class="post author"><?php if (!empty($author)) echo s2_htmlencode($author); ?></div>
@@ -20,9 +22,9 @@
         <?php echo s2_htmlencode($title); ?>
     <?php } ?>
     <?php if (!empty($favorite) && $favorite != 2) {?>
-        <a href="<?php echo S2_BLOG_PATH.urlencode(S2_FAVORITE_URL); ?>/" class="favorite-star" title="<?php echo Lang::get('Favorite', 's2_blog'); ?>">★</a>
+        <a href="<?php echo $favoritePostsUrl; ?>" class="favorite-star" title="<?php echo $trans('Favorite posts'); ?>">★</a>
     <?php } elseif (!empty($favorite)) {?>
-        <span class="favorite-star" title="<?php echo Lang::get('Favorite', 's2_blog'); ?>">★</span>
+        <span class="favorite-star" title="<?php echo $trans('Favorite posts'); ?>">★</span>
     <?php } ?>
 </h2>
 <div class="post time"><?php echo $time; ?></div>
@@ -41,13 +43,9 @@ echo $text;
 
     if ($commented && S2_SHOW_COMMENTS) {
         if ($comment_num) {
-            if (substr(S2_LANGUAGE, 0, 7) === 'Russian') {
-                $footer['comments'] = '<span class="post-comments"><a href="' . $link . '#comment">' . sprintf(s2_russian_plural((int)$comment_num, '%d комментариев', '%d комментарий', '%d комментария'), $comment_num) . '</a></span>';
-            } else {
-                $footer['comments'] = '<span class="post-comments"><a href="' . $link . '#comment">' . sprintf(Lang::get('Comments', 's2_blog'), $comment_num) . '</a></span>';
-            }
+            $footer['comments'] = '<span class="post-comments"><a href="' . $link . '#comment">' . $trans('N Comments', ['%count%' => $comment_num, '{{ count }}' => $comment_num]) . '</a></span>';
         } else {
-            $footer['comments'] = '<span class="post-comments"><a href="' . $link . '#add-comment">' . (S2_ENABLED_COMMENTS ? Lang::get('Post comment', 's2_blog') : '') . '</a></span>';
+            $footer['comments'] = '<span class="post-comments"><a href="' . $link . '#add-comment">' . (S2_ENABLED_COMMENTS ? $trans('Post comment') : '') . '</a></span>';
         }
     }
 

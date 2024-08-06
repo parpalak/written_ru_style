@@ -1,11 +1,10 @@
 <?php
-/**
- * @var $see_also array
- */
+/** @var callable $trans */
+/** @var array $see_also */
 ?>
 <div>
-    <?php echo Lang::get('See also', 's2_blog'); ?>&nbsp;
-    <?php echo implode('&nbsp;&middot; ', array_map(function (array $item) {
+    <?php echo $trans('See also'); ?>&nbsp;
+    <?php echo implode('&nbsp;&middot; ', array_map(static function (array $item) {
         return '<a href="' . $item['link'] . '">' . $item['title'] . '</a>';
     }, $see_also)); ?>
 </div>
