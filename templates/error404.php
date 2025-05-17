@@ -1,7 +1,14 @@
 <?php
 
-if (!defined('S2_ROOT')) die;
-include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
+use S2\Cms\Template\HtmlTemplateProvider;
+
+if (!isset($this)) {
+    die;
+}
+if (!$this instanceof HtmlTemplateProvider) {
+    throw new \LogicException('Template must be included from ' . HtmlTemplateProvider::class);
+}
+include_once __DIR__ . '/common_links.php';
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +40,7 @@ include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
 
 			<p>Спасибо за внимание.</p>
 
-			<p align="center"><img border="0" src="<?php echo S2_PATH.'/_styles/'.S2_STYLE ?>/images/404.jpg" width="768" height="567" alt="404 - Not Found" /></p>
+			<p align="center"><img border="0" src="<?php echo S2_PATH.'/_styles/'.$this->styleName ?>/images/404.jpg" width="768" height="567" alt="404 - Not Found" /></p>
 		</div>
 	</div>
 

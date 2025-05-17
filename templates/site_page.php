@@ -1,7 +1,9 @@
 <?php
 
-if (!defined('S2_ROOT')) die;
-include_once S2_ROOT.'/_styles/'.S2_STYLE.'/templates/common_links.php';
+if (!isset($this)) {
+    die;
+}
+include_once __DIR__ . '/common_links.php';
 
 ?>
 <!DOCTYPE html>
