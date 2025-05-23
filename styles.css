@@ -822,6 +822,7 @@ img.o, #content img.o {
 	#content img { /* overwrite 90vw in content */
 		height: auto !important;
 		max-width: 100% !important;
+		max-height: inherit !important;
 	}
 	#content embed {
 		max-width: 100%;
