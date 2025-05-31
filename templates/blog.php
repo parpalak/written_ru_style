@@ -14,6 +14,7 @@ include_once __DIR__ . '/common_links.php';
 <!-- s2_meta -->
 <!-- s2_styles -->
 <!-- s2_navigation_link -->
+<!-- s2_rss_link -->
 </head>
 
 <body>
