@@ -40,7 +40,7 @@ include_once __DIR__ . '/common_links.php';
 
 			<p>Спасибо за внимание.</p>
 
-			<p align="center"><img border="0" src="<?php echo S2_PATH.'/_styles/'.$this->styleName ?>/images/404.jpg" width="768" height="567" alt="404 - Not Found" /></p>
+			<p align="center"><img border="0" src="<?php echo $this->basePath.'/_styles/'.$this->styleName ?>/images/404.jpg" width="768" height="567" alt="404 - Not Found" /></p>
 		</div>
 	</div>
 
