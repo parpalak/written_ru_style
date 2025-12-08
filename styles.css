@@ -539,7 +539,16 @@ img.o, #content img.o {
 		color: #ccc;
 		}
 .video-wrapper > iframe {
-    background: repeating-conic-gradient(#eee 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
+    background: #eee;
+    background:
+        /* верхний слой — SVG с кругом и play */
+        center/64px no-repeat url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 22 22'>\
+<circle cx='11' cy='11' r='11' fill='%23f5f5f5'/>\
+<path d='M16 11 8 17V5z' fill='%23ddd'/>\
+</svg>"),
+        /* нижний слой — шахматный фон */
+        repeating-conic-gradient(#eee 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
     }
 
 .recommendation-video-wrapper {
